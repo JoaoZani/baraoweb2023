@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        #container{
+            max-width: 600px;
+            display: flex;
+            outline: 1px solid green;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+        div.caixa {
+            background-color: azure;
+            border: 2px solid blue;
+            height: 100px;
+            width: 100px;
+        }
+        div.menu {
+            flex: 2;
+            border: 2px solid blue;
+            background-color: azure;
+            height: 100px;
+        }
+        div.principal{
+            flex: 4;
+            border: 2px solid blue;
+            background-color: lemonchiffon;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox</h1>
+
+    <section id="container">
+        <div class="menu"> Caixa 1 </div>
+        <div class="principal"> Caixa 2</div>
+    </section>
+    
+</body>
+</html>
