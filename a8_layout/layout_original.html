@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        #container{
+            display: flex;
+            border: 2px dashed green;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 0 auto;
+        }
+        div.caixa {
+            background-color: azure;
+            border: 2px solid blue;
+            height: 100px;
+            width: 100px;
+        }
+        div.menu {
+            border: 2px solid blue;
+            background-color: azure;
+            height: 100px;
+        }
+        div.principal{
+            border: 2px solid blue;
+            background-color: lemonchiffon;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="" id="logo">Logo</a>
+            <a href="">Principal</a>
+            <a href="">Quem Somos</a>
+            <a href="">Contato</a>
+        </nav>
+        <div id="perfil">
+            Perfil
+        </div>
+    </header>
+    <main>
+        <aside>
+            <ul>
+                <li><a href="">Receitas Salgadas</a></li>
+                <li><a href="">Receitas Doces</a></li>
+                <li><a href="">Café</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h1>Receita Principal</h1>
+            <p>adsof jaoif jasdoifja sdofijasdofiaj sdofiajsdoi</p>
+        </article>
+    </main>
+    <footer>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+       * {
+        margin:0;
+        padding:0;
+       } 
+       header{
+        background-color: beige;
+        display: flex;
+        padding: 1em;
+        justify-content: space-between;
+        height: 5vh;
+       }
+          header #logo {
+            font-weight: 900;
+          } 
+        
+        main{
+            max-width: 700px;
+            background-color: azure;
+            margin: 0 auto;
+            display: flex;
+            height: 60vh;
+        }
+
+        main aside{
+            flex: 1;
+        }
+
+        main aside ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+        }
+
+        main aside ul li {
+            padding: 1em;
+        }
+
+        main article{
+            flex: 4;
+            padding: 2em;
+        }
+
+        footer {
+            text-align: center;
+            background-color: lightgray;
+            height: 10vh;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="" id="logo">Logo</a>
+            <a href="">Principal</a>
+            <a href="">Quem Somos</a>
+            <a href="">Contato</a>
+        </nav>
+        <div id="perfil">
+            Perfil
+        </div>
+    </header>
+    <main>
+        <aside>
+            <ul>
+                <li><a href="">Receitas Salgadas</a></li>
+                <li><a href="">Receitas Doces</a></li>
+                <li><a href="">Café</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h1>Receita Principal</h1>
+            <p>adsof jaoif jasdoifja sdofijasdofiaj sdofiajsdoi</p>
+        </article>
+    </main>
+    <footer>
+        <p>Ribeirao Preto</p>
+    </footer>
+    
+</body>
+</html>
