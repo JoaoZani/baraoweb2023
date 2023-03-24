@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;}
+        body{ background-color: aliceblue;}
+        #canvas{
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            margin: 1em auto;
+        }
+        .point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas">
+    </div>
+    <script>
+        function create_point(x, y) {
+            let point = document.createElement('div');
+            point.classList.add('point');
+            point.style.left = x + 'px';
+            point.style.top = y + 'px';
+            return point;
+        }
+
+
+        //create point on mouse click event on canvas relative to window
+        //and make the point falls down on canvas
+        let canvas = document.getElementById('canvas');
+        canvas.addEventListener('click', function(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+            let point = create_point(x, y);
+            canvas.appendChild(point);
+            let interval = setInterval(function() {
+                let top = parseInt(point.style.top);
+                point.style.top = top + 1 + 'px';
+                if (top >= canvas.offsetHeight) {
+                    canvas.removeChild(point);
+                    clearInterval(interval);
+                }
+            }, 10); 
+        });
+
+
+   </script>
+</body>
+</html>

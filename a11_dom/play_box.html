@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Play</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;}
+    body{background-color: #f1f1f1;}
+
+    div#grade {
+      display: grid;
+      padding: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+      gap: 10px;
+      width: 500px;
+      margin: 0 auto;
+      border: 4px dashed blue;
+    }
+    div.box {
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+    }
+    #grade div.clicou {
+      background-color: red;
+    } 
+  </style>
+</head>
+<body>
+  <button id="add-box" onclick="add_box()">Bota caixa</button>
+  <div id="grade">
+    <div class="box" onclick="click_box(this)"></div>
+  </div>
+  <script>
+
+    function add_box() {
+      let grade = document.getElementById('grade');
+      let box = document.createElement('div');
+      box.classList.add('box');
+      box.addEventListener('click', function() {
+        click_box(this);
+      });
+      grade.appendChild(box);
+    }
+
+    function click_box(e) {
+      // toggle class clicou
+      console.log(e)
+      e.classList.toggle('clicou');
+    }
+
+  </script>
+</body>
+</html>
