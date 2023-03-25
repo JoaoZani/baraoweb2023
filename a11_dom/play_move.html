@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play</title>
+    <style>
+        #player {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: red;
+        }
+        .enemy {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: blue;
+        }
+        body{
+            background-color: aliceblue;
+        }
+        #canvas {
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            margin: 1em auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas">
+        <div id="player"></div>
+    </div>
+    <script>
+        function move_player(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+            player.style.left = x + 'px';
+            player.style.top = y + 'px';
+        }
+
+        function create_enemy(x, y) {
+            let enemy = document.createElement('div');
+            enemy.classList.add('enemy');
+            enemy.style.left = x + 'px';
+            enemy.style.top = y + 'px';
+            return enemy;
+        }
+
+        function move_enemy_top(canvas, enemy) {
+            let interval = setInterval(function() {
+                let top = parseInt(enemy.style.top);
+                enemy.style.top = top - 1 + 'px';
+                if (top <=  canvas.offsetTop) {
+                    canvas.removeChild(enemy);
+                    clearInterval(interval);
+                }
+            }, 10); 
+        }
+        
+        //move player with mouse inside canvas
+        canvas.addEventListener('mousemove', move_player);
+        //move player with mouse inside canvas and create enemy on click
+        canvas.addEventListener('click', function(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+            let enemy = create_enemy(x, y);
+            canvas.appendChild(enemy);
+            move_enemy_top(canvas, enemy);
+        });
+    </script>
+</body>
+</html>
